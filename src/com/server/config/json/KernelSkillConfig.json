@@ -1,0 +1,31 @@
+[
+	{
+		"id":"n_id_01",
+		"name":"东海鱼村",
+		"acls":1,
+		"race":1,
+		"up":[
+			{"leven":1,"counter":10000,"herol":50}
+		],
+		"values":[
+			{"leven":1,"value":1000,"target":4,keep:2},
+			{"leven":1,"value":1000,"target":4,keep:2},
+			{"leven":3,"value":1000,"target":4,keep:2},
+		]
+	},
+	{
+		"id":"n_id_01",
+		"name":"东海鱼村",
+		"acls":1,
+		"race":1,
+		"up":[
+			{"leven":1,"counter":10000,"herol":50}
+		],
+		"values":[
+			{"leven":1,"value":1000,"target":4,keep:2},
+			{"leven":1,"value":1000,"target":4,keep:2},
+			{"leven":3,"value":1000,"target":4,keep:2},
+		]
+	},
+
+]

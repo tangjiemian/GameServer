@@ -1,30 +1,44 @@
 package com.server.game.heros;
 
-import com.server.game.heros.controls.HeroControl;
-import com.server.game.heros.controls.HeroRequestControl;
+import com.server.game.heros.controls.HeroBeanControl;
+import com.server.game.heros.controls.HeroEquipmentControl;
+import com.server.game.heros.controls.HeroEventControl;
+import com.server.game.heros.controls.HeroFightControl;
+import com.server.game.heros.controls.HeroGameSceneControl;
+import com.server.game.heros.controls.HeroGroupControl;
+import com.server.game.heros.controls.HeroMessageControl;
 import com.server.game.heros.controls.HeroSkillControl;
 
 public abstract class AIHero {
 	
 	private String ids;
-	private HeroControl heroControl = new HeroControl();
-	private HeroSkillControl heroSkillControl = new HeroSkillControl();
-	private HeroRequestControl heroRequestControl = new HeroRequestControl();
 	
-	private int atIndex;
+	private HeroBeanControl heroBeanControl = new HeroBeanControl(this); //属性控制器
 	
-	private int isAttack = 0;
+	private HeroEquipmentControl heroEquipmentControl = new HeroEquipmentControl(this);//装备控制器
+	
+	private HeroSkillControl heroSkillControl = new HeroSkillControl(this);//技能控制器
+	
+	private HeroGameSceneControl heroGameSceneControl = new HeroGameSceneControl(this); //地图控制器
+
+	private HeroGroupControl heroGroupControl = new HeroGroupControl(this); //组队控制器
+	
+	private HeroFightControl heroFightControl = new HeroFightControl(this); //战斗控制器
+	
+	private HeroEventControl heroEventControl = new HeroEventControl(this); //事件管理器
+	
+	private HeroMessageControl heroMessageControl = new HeroMessageControl(this); //消息管理器
+	
+	
 	
 	public String getIds() {
 		return ids;
 	}
 
-	
-	
-	public HeroControl getHeroControl() {
-		return heroControl;
-	}
 
+	public HeroBeanControl getHeroBeanControl() {
+		return heroBeanControl;
+	}
 
 
 	public HeroSkillControl getHeroSkillControl() {
@@ -32,34 +46,38 @@ public abstract class AIHero {
 	}
 
 
+	public HeroEquipmentControl getHeroEquipmentControl() {
+		return heroEquipmentControl;
+	}
 
-	public HeroRequestControl getHeroRequestControl() {
-		return heroRequestControl;
+	
+	
+	public HeroGameSceneControl getHeroGameSceneControl() {
+		return heroGameSceneControl;
 	}
 
 
-
-	public int getAtIndex() {
-		return atIndex;
+	public HeroGroupControl getHeroGroupControl() {
+		return heroGroupControl;
 	}
 
 
-
-	public void setAtIndex(int atIndex) {
-		this.atIndex = atIndex;
+	public HeroFightControl getHeroFightControl() {
+		return heroFightControl;
 	}
 
 
-
-	public int getIsAttack() {
-		return isAttack;
+	public HeroEventControl getHeroEventControl() {
+		return heroEventControl;
 	}
 
 
-
-	public void setIsAttack(int isAttack) {
-		this.isAttack = isAttack;
+	public HeroMessageControl getHeroMessageControl() {
+		return heroMessageControl;
 	}
 
+
+	
+	
 	
 }

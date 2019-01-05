@@ -1,7 +1,7 @@
 package com.server.game.scripts;
 
-public interface AIScript {
+public abstract class AIScript {
 	
-	public void dispatch();
+	
 
 }

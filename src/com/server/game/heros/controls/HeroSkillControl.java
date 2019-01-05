@@ -3,46 +3,61 @@ package com.server.game.heros.controls;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.server.game.skills.AISkill;
-import com.server.utils.SkillUtils;
+import com.server.game.beans.HeroSkillBean;
+import com.server.game.heros.AIHero;
 
 public class HeroSkillControl {
 	
-	private Map<String,AISkill> skils = new HashMap<String,AISkill>();
+	private AIHero owner;
 	
+	private Map<String,HeroSkillBean> skils = new HashMap<String,HeroSkillBean>();//注册技能
 	
-	public void regditSkill(AISkill skill) {
-		
+	public HeroSkillControl(AIHero owner) {
+		this.owner = owner;
+	}
+	
+
+	public AIHero getOwner() {
+		return owner;
+	}
+
+
+	/**
+	 * 注册技能
+	 * @param skill
+	 */
+	public void regditSkill(HeroSkillBean skill) {
 		skils.put(skill.getSkillid(), skill);
-		
 	}
 	
-	public void removeRegditSkill(AISkill skill) {
-		skils.remove(skill.getSkillid());
-	}
-	
+	/**
+	 * 移除技能
+	 * @param skillid
+	 */
 	public void removeRegditSkill(String skillid) {
 		skils.remove(skillid);
 	}
 	
 	
-	public AISkill getOriginalSkill(String skillid) {
+	/**
+	 * 获取一个技能属性
+	 * @param skillid
+	 * @return
+	 */
+	public HeroSkillBean getHeroSkillBean(String skillid) {
 		 return skils.get(skillid);
 	}
 	
 	
-	public AISkill getCombineSkillWithCofnigSkill(String skillid) {
-		return SkillUtils.combineSkill(skils.get(skillid));
-	}
-	
+	/**
+	 * 验证技能是否存在
+	 * @param skillid
+	 * @return
+	 */
 	public boolean checkSkill(String skillid) {
 		
 		return skils.containsKey(skillid);
 	}
-	
-	
-	
-	
 	
 	
 }

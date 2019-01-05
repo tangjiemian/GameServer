@@ -9,8 +9,6 @@ public class Fuck {
 	
 	public String sid = "0";
 	
-	public int a;
-	
 	public List<Target> tList;
 	
 	

@@ -12,6 +12,5 @@ public class Target {
 	
 	public List<Fuck> forceList;
 	
-
-
+	public ActionNode actionNode;
 }

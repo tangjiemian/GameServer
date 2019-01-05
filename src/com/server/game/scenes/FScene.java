@@ -4,17 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.server.game.heros.AIHero;
-import com.server.game.heros.group.FGroup;
-import com.server.net.packet.mod2.GFuck;
-import com.server.utils.FightUtils;
+import com.server.game.heros.group.FightGroup;
+import com.server.net.packet.mod2.ActionNode;
+import com.server.utils.GameFightGroupUtils;
 
 public class FScene {
 	
-	private FGroup formGroup ;
+	private FightGroup formGroup ;
 	
-	private FGroup targetGroup ;
+	private FightGroup targetGroup ;
 	
-	private List<GFuck> paketList = new ArrayList<GFuck>();
+	private List<ActionNode> responsePaketList = new ArrayList<ActionNode>();
+	
+	
 	
 	private byte over = 0;
 	
@@ -23,11 +25,13 @@ public class FScene {
 	 */
 	public void startFire() {
 		while(over == 0) {
-			AIHero currentHero = FightUtils.FGROUPUTILS.getFightCurrentAction(formGroup, targetGroup);
+			AIHero currentHero = GameFightGroupUtils.getFightCurrentAction(formGroup, targetGroup);
 			if(null == currentHero) {
 				over = 1;
 			}else {
-				currentHero.getHeroControl().useSkill();
+				
+				
+				
 			}
 		}
 	}
@@ -36,16 +40,16 @@ public class FScene {
 	 * 拼装当前战斗响应数据包
 	 * @param gfuck
 	 */
-	public void putPaketGFuk(GFuck gfuck) {
-		paketList.add(gfuck);
+	public void putPaketGFuk(ActionNode actionNode) {
+		responsePaketList.add(actionNode);
 	}
 
 	/**
 	 * 获取当前战斗回合响应数据包
 	 * @return
 	 */
-	public List<GFuck> getPaketList() {
-		return paketList;
+	public List<ActionNode> getPaketList() {
+		return responsePaketList;
 	}
 
 	
