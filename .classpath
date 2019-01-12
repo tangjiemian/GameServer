@@ -2,7 +2,11 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="sources"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/UserCLibs"/>
+	<classpathentry kind="lib" path="sources/lib/fastjson-1.2.54.jar"/>
+	<classpathentry kind="lib" path="sources/lib/poi-3.17.jar"/>
+	<classpathentry kind="lib" path="sources/lib/gson-2.8.5.jar"/>
+	<classpathentry kind="lib" path="sources/lib/beetlsql-2.10.18.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

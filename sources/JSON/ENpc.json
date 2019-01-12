@@ -1,0 +1,9 @@
+{
+    "NPC1001":{
+        "id":"NPC1001",
+        "name":"长安车夫",
+        "type":1,
+        "animat":"10001",
+        "script":"script1001"
+    }
+}

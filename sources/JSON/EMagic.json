@@ -1,0 +1,12 @@
+{
+    "MC1001":{
+        "id":"MC1001",
+        "name":"天诛地灭",
+        "type":1,
+        "studyT":1001,
+        "valueN":10000,
+        "targetT":3,
+        "targetN":3,
+        "continualN":3
+    }
+}

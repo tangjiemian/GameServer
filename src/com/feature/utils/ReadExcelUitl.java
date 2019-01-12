@@ -17,6 +17,8 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.apache.poi.util.SystemOutLogger;
 
+import com.server.handsomegame.GameEnvironmentContent;
+
 class Utils{
 	
 	
@@ -220,6 +222,7 @@ public class ReadExcelUitl {
 				value = getCell(cellIndex);
 				if(count == 0) {
 					lineId = Utils .O_T_I(value) ;
+					System.out.println("ID:" + lineId);
 					count ++;
 				}
 				kvMap.put(keysList.get(cellIndex), value);
@@ -232,9 +235,15 @@ public class ReadExcelUitl {
 	
 	public static void main(String[] args) throws Exception {
 		ReadExcelUitl exceutil = new ReadExcelUitl("excel","1111.xls");
-		Map<Integer,Map<String,Object>> map = exceutil.init().indexSheet(3).getRowsCellsForMap();
+		Map<Integer,Map<String,Object>> map = exceutil.init().indexSheet(4).getRowsCellsForMap();
 		System.out.println(map.get(100).get("ID"));
-		System.out.println(map.get(100).get("L3"));
+		System.out.println(map.get(100).get("NAME"));
 		//exceutil.init().indexSheet(0).getRowsCells();
+		GameEnvironmentContent.gameHeroSetting = new ReadExcelUitl("excel", "1111.xls").init().indexSheet(0)
+				.getRowsCellsForMap();
+		
+		GameEnvironmentContent.gameSkillSetting = new ReadExcelUitl("excel", "1111.xls").init().indexSheet(3)
+				.getRowsCellsForMap();
+
 	}
 }

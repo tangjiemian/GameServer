@@ -6,4 +6,7 @@ public class Race {
 	
 	private String name;
 	
+	private String animaid;
+	
+	
 }

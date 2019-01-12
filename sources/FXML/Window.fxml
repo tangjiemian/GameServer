@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox layoutX="14.0" layoutY="14.0" prefHeight="29.0" prefWidth="291.0">
+               <children>
+                  <Label text="HP：    " textFill="#5767c3" />
+                  <Label text="100" textFill="#283da4" />
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+   </top>
+   <bottom>
+      <HBox alignment="BASELINE_CENTER" prefHeight="43.0" prefWidth="601.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" text="创建角色" />
+            <Button mnemonicParsing="false" text="加入战斗" />
+            <Button mnemonicParsing="false" text="进入地图" textAlignment="CENTER" />
+         </children>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </HBox>
+   </bottom>
+</BorderPane>
